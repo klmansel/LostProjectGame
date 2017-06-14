@@ -6,6 +6,11 @@
 #include "Game.hpp"
 #include "Room.hpp"
 #include "Bathroom.hpp"
+#include "MediaRoom.hpp"
+#include "Office.hpp"
+#include "MasterBedroom.hpp"
+#include "GuestBedroom.hpp"
+#include "Playroom.hpp"
 #include "InputVal.hpp"
 #include <string>
 #include <iostream>
@@ -23,15 +28,11 @@ Game::Game(){
   srand(time (NULL)); //to create random placement of key
 }
 /*********************************************************************
-Function: Game destructor //may not need
-*********************************************************************/
-// ~Game(){}
-/*********************************************************************
 Function: Key Num
 Description: Generates a random number to place key in a room
 *********************************************************************/
 int Game::keyNum(){
-  int randNum = rand() % 100 + 1;
+  int randNum = rand() % 120 + 1;
   return randNum;
 }
 /*********************************************************************
@@ -41,67 +42,109 @@ Description: Gives intro to game and starts gameplay
 void Game::startMenu(){
   InputVal checkInput;
   int startGame;
-  cout << "Welcome to the Haunted Mansion\n"<< endl;
-  cout << "You are stuck inside the Haunted Mansion doomed to repeat CS 162";
-  cout << " unless you find the key to get out.\n";
-  cout << "The key is hidden in one of many rooms.\n\n";
-  cout << "Your goal is to successfully retrieve the key from it's hiding";
-  cout << " place so that you can leave this mansion haunted with memories ";
-  cout << "of CS 162!\n";
-  cout << "Press 1 to start on your journey to find the key.";
+  cout << "\n****** WELCOME TO THE OSU MANSION ******\n"<< endl;
+  cout << "You are stuck inside the OSU Mansion doomed to repeat CS 162";
+  cout << " unless you find your missing project to get out!\n\n";
+  cout << "The project is hidden in one of 6 rooms.\n\n";
+  cout << "Your goal is to successfully retrieve the project from it's hiding";
+  cout << " place so that you can leave this mansion filled with memories ";
+  cout << "of CS 162!\n\n";
+  cout << "Press 1 to start on your journey to find your project.";
 
   startGame = checkInput.validIntMinMax(1,1);
+  cout << endl;
   if(startGame == 1){
     play();
   }
 }
-/*********************************************************************
-Function: Move to Room
-Description:
-*********************************************************************/
-void Game::moveToRoom(){
-  Room* currentRoom = NULL;
-  InputVal checkInput;
-  int whichRoom;
-  cout << "Which room would you like to visit first?" << endl;
-  cout << "1.\tBathroom\n2.\tMediaRoom\n3.\tOffice\n4.\tGuestRoom\n";
-  cout << "5.\tPlayroom\n6.Master" << endl;
-  whichRoom = checkInput.validIntMinMax(1,5);
 
-  if(whichRoom == 1){
-    currentRoom = new Bathroom();
-    currPlayer->setCurrLocation(currentRoom);
-    cout << "You are now in the " << currentRoom->getRoomName() << endl;
-    //do stuff in room (function for this-pass room)
-  }
-}
 /*********************************************************************
-Function: Place Key
+Function: Place Key (Key = Project)
 Description: Gives intro to game and starts gameplay
 *********************************************************************/
-Room* Game::placeKey(int keyNum){
-  Room* keyRoom = NULL;
-  if(keyNum <= 50){
-    cout << "Rand Key Num : " << keyNum << endl;
-    //generate room
-    keyRoom = new Room();
-  }else if(keyNum > 50){
-    cout << "Rand Key Num : " << keyNum << endl;
-    //generate room
-    keyRoom = new Bathroom();
+string Game::placeKey(int keyNum){
+  string keyRoom;
+  if(keyNum <= 5){
+    keyRoom = "Bathroom";
+  }else if(keyNum > 5 && keyNum <= 40){
+    keyRoom = "Media Room";
+  }else if(keyNum > 40 && keyNum <=60){
+    keyRoom = "Office";
+  }else if(keyNum > 60 && keyNum <=80){
+    keyRoom = "Master Bedroom";
+  }else if(keyNum > 80 && keyNum <= 100){
+    keyRoom = "Guest Room";
+  }else if(keyNum > 100 && keyNum <= 120){
+    keyRoom = "Playroom";
   }
   return keyRoom;
 }
+
 /*********************************************************************
 Function: Play
 Description: Begins Haunted Mansion game. Places Key, and calls
-function to change Rooms (CREATE THIS FUNCTION)
+function to change Rooms for # of player turns remaining
 *********************************************************************/
 void Game::play(){
-  Room* keyRoom = placeKey(keyNum());
-  cout << "Great setup Kara!!" << endl;
-  cout << "The key is placed in: " << keyRoom->getRoomName() << endl;
-  cout << "Does this room have the key? " << keyRoom->hasKey() << endl;
+  string keyRoom = placeKey(keyNum());
 
-  delete keyRoom; //this worked to freed the memory leak
+//start in the Hallway-default Room
+  Room* currRoom = new Room();
+  currPlayer->setMoves(5);
+  int numMoves;
+  numMoves = currPlayer->getChances();
+
+  cout << "(HINT: The project is in the " << keyRoom << ")" << endl;
+
+  cout << "You are currently in the " << currRoom->getRoomName() << endl;
+  cout << "Let's start searching in the Bathroom" << endl;
+
+  currRoom = new Bathroom();
+
+  cout << "\nYou have " << numMoves << " chances to find your project.\n" << endl;
+  /*GAMEPLAY LOOP*/
+  do{
+
+    bool foundKey = wonGame(keyRoom, currRoom);
+
+      if(foundKey){
+        numMoves = 0;
+      }else{
+        //choose another room
+        currRoom->checkFurniture(currPlayer);
+        Room* newRoom = currRoom->moveToRoom();
+        currPlayer->setCurrLocation(newRoom);
+        currRoom = currPlayer->getCurrLocation();
+        //Decrement chances to find key each room change
+        numMoves--;
+        //Retrieve number of remaining chances
+        numMoves = currPlayer->getChances();
+      }
+      if (numMoves <= 0 && foundKey == false){
+        lostGame();
+      }
+      cout << "\nYou have " << numMoves << " chances to find your project.\n" << endl;
+  }while(numMoves > 0);
+
+  delete currRoom;
+}
+
+/*WON GAME*/
+bool Game::wonGame(string keyRoom, Room* current){
+  string currRoomName = current->getRoomName();
+  if(keyRoom == currRoomName){
+    cout << "You've found the USB drive with your project!! It was in the ";
+    cout << current->getFurnitureName() << " all along!" << endl;
+    cout << "\n\nNow you can turn it in and enjoy your summer.";
+    cout << " Thanks for playing!" << endl;
+    return true;
+  }else{
+    return false;
+  }
+
+}
+/*LOST GAME*/
+void Game::lostGame(){
+  cout << "GAME OVER! No more chances. You are doomed to repeat CS162.";
+  cout << "Better luck next quarter!" << endl;
 }

@@ -9,16 +9,24 @@ cabinet which has a pill inside to increase player turns by 10.
 #define BATHROOM_HPP
 #include "Player.hpp"
 #include "Room.hpp"
+
+#include "MasterBedroom.hpp"
+#include "GuestBedroom.hpp"
+#include "MediaRoom.hpp"
+#include "Office.hpp"
+
 #include <string>
 
 using std::string;
 
 class Bathroom : public Room{
 private:
-  int magicPill = 5; //located in medicine cabinet
+  int magicPill = 2; //located in medicine cabinet
+
 public:
   Bathroom();
-  void checkCloset(Player*);
   void checkFurniture(Player*); // magicPill in cabinet player turns +=10
+  Room* moveToRoom();
+
 };
 #endif

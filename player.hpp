@@ -5,26 +5,29 @@
 *********************************************************************/
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
-#include "Game.hpp"
+#include "Room.hpp"
 #include <string>
+#include <queue>
 using std::string;
+using std::queue;
 
 class Room;
 class Player {
 private:
   Room* currRoom = NULL;
   int chances; //number of turns decrement every move
+  //queue of objects
+  queue<string>furnitureList;
 public:
   Player();
-  // ~Player(); //fix this
+  ~Player();
   void increaseChances(int item);
   int getChances();
+  void setMoves(int);
   void setCurrLocation(Room*);
-//  void getCurrLocation();
+  Room* getCurrLocation();
+  void decreaseChances(int item);
+  void addStuffToBackPack(string);
+
 };
 #endif
-
-
-
-//int player turns == 15 Can be increased by magic pill
-//currLocation(Room* r){ currRoom = r}

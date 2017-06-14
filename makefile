@@ -5,9 +5,10 @@
 CC=g++ -std=c++0x
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp InputVal.cpp Room.cpp Bathroom.cpp Player.cpp Game.cpp
+SOURCES=main.cpp InputVal.cpp Room.cpp Bathroom.cpp Game.cpp Player.cpp \
+MediaRoom.cpp Office.cpp GuestBedroom.cpp MasterBedroom.cpp Playroom.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=hauntedMansion
+EXECUTABLE=OSUMansion
 
 all: $(SOURCES) $(EXECUTABLE)
 

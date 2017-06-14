@@ -7,23 +7,33 @@ be assigned a key in the Game class at random.
 *********************************************************************/
 #include "Room.hpp"
 
+
 /*********************************************************************
 Function: Room constructor
 *********************************************************************/
 Room::Room(){
   roomName = "Hallway";
   furnitureName = "None";
-  // Room* Bathroom = NULL; //pointer to BR object
-  // Room* MediaRoom = NULL; //pointer to MR object
-  // Room* Office = NULL; //pointer to Office object
-  // Room* GuestRoom = NULL; //pointer to GR object
-  // Room* Playroom = NULL; //pointer to PR object
-  // Room* Master = NULL; //pointer to MBR object
+
+  // Room* left = NULL;
+  // Room* right = NULL;
+  // Room* upstairs = NULL;
+  // Room* downstairs = NULL;
 }
-/*********************************************************************
-Function: Room destructor
-*********************************************************************/
-Room::~Room(){}
+
+Room* Room::getRight(){
+  return right;
+}
+Room* Room::getLeft(){
+  return left;
+}
+Room* Room::getUpstairs(){
+  return upstairs;
+}
+Room* Room::getDownstairs(){
+  return downstairs;
+}
+
 /*********************************************************************
 Function: Get Room Name
 *********************************************************************/
@@ -31,10 +41,30 @@ string Room::getRoomName(){
   return roomName;
 }
 /*********************************************************************
-Function: Has Key
+Function: Get Furniture Name
 *********************************************************************/
-bool Room::hasKey(){
-  key = true;
+string Room::getFurnitureName(){
+  return furnitureName;
+}
 
-  return key;
+/*********************************************************************
+Function: Check Furniture
+*********************************************************************/
+void Room::checkFurniture(Player*){
+//virtual function
+}
+
+/*********************************************************************
+Function: Move to Room
+Description: Virtual Function that returns the next room the user can
+visit
+*********************************************************************/
+Room* Room::moveToRoom(){
+ return NULL;
+}
+/*********************************************************************
+Function: Room destructor
+*********************************************************************/
+Room::~Room(){
+
 }

@@ -23,7 +23,9 @@ public:
   int keyNum();
   void startMenu();
   void play();
-  Room* placeKey(int);
-  void moveToRoom();
+  string placeKey(int);
+  // Room* moveToRoom(Player* p);
+  bool wonGame(string, Room* current);
+  void lostGame();
 };
 #endif

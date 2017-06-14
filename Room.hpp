@@ -8,31 +8,43 @@ be assigned a key in the Game class at random.
 *********************************************************************/
 #ifndef ROOM_HPP
 #define ROOM_HPP
-#include "Game.hpp"
+
+#include "Player.hpp"
+#include "InputVal.hpp"
+
 #include <string>
 
 using std::string;
 
-// class Player; //circular dependency issue
+class Player;
 class Room {
 protected:
-  //piece of furniture
-  //need 4 pointers UP, DOWN, LEFT, RIGHT??
-  // Room* Bathroom; //pointer to BR object
-  // Room* MediaRoom; //pointer to MR object
-  // Room* Office; //pointer to Office object
-  // Room* GuestRoom; //pointer to GR object
-  // Room* Playroom; //pointer to PR object
-  // Room* Master; //pointer to MBR object
+  //Pointers to Rooms:
+
+  Room* left;
+  Room* right;
+  Room* upstairs;
+  Room* downstairs;
+
   string roomName;
-  bool key = false;
   string furnitureName;
+  bool key = false;
+  bool visited = false;
+
 public:
+  //constructor and destructor (virtual)
   Room();
   virtual ~Room();
-  // virtual void checkCloset(Player*);//fix circular dependency issue
-  // virtual void checkFurniture(Player*);
+  //virtual functions
+  virtual void checkFurniture(Player*);
+  virtual Room* moveToRoom();
+  //getters for identification
   string getRoomName();
-  bool hasKey();  //depending on range of placeKey key is placed in room
+  string getFurnitureName();
+  Room* getRight();
+  Room* getLeft();
+  Room* getUpstairs();
+  Room* getDownstairs();
+  
 };
 #endif
