@@ -1,7 +1,9 @@
 /*********************************************************************
 ** Author: Kara Mansel
 ** Date: 6/7/2017
-** Description:
+** Description: The Game engine for OSU Mansion: A text based Game
+The user has to locate their project in one of 6 rooms before their
+chances run out.
 *********************************************************************/
 #include "Game.hpp"
 #include "Room.hpp"
@@ -101,17 +103,17 @@ void Game::play(){
 
   currRoom = new Bathroom();
 
-  cout << "\nYou have " << numMoves << " chances to find your project.\n" << endl;
   /*GAMEPLAY LOOP*/
   do{
+    cout << "\nYou have " << numMoves << " chances to find your project.\n" << endl;
 
     bool foundKey = wonGame(keyRoom, currRoom);
 
       if(foundKey){
         numMoves = 0;
       }else{
-        //choose another room
         currRoom->checkFurniture(currPlayer);
+        //choose another room
         Room* newRoom = currRoom->moveToRoom();
         currPlayer->setCurrLocation(newRoom);
         currRoom = currPlayer->getCurrLocation();
@@ -123,7 +125,6 @@ void Game::play(){
       if (numMoves <= 0 && foundKey == false){
         lostGame();
       }
-      cout << "\nYou have " << numMoves << " chances to find your project.\n" << endl;
   }while(numMoves > 0);
 
   delete currRoom;

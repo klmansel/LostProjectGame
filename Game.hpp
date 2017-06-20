@@ -1,7 +1,9 @@
 /*********************************************************************
 ** Author: Kara Mansel
 ** Date: 6/7/2017
-** Description:
+** Description:The Game engine for OSU Mansion: A text based Game
+The user has to locate their project in one of 6 rooms before their
+chances run out. 
 *********************************************************************/
 #ifndef GAME_HPP
 #define GAME_HPP
