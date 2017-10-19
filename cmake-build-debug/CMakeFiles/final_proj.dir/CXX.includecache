@@ -1,0 +1,208 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.cpp
+Bathroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+MasterBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+GuestBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+MediaRoom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.hpp
+Office.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.hpp
+string
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Game.cpp
+Game.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Game.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+Bathroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+MediaRoom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.hpp
+Office.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.hpp
+MasterBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+GuestBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+Playroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Playroom.hpp
+InputVal.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/InputVal.hpp
+string
+-
+iostream
+-
+ctime
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Game.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+string
+-
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.cpp
+GuestBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+MasterBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+Playroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Playroom.hpp
+MediaRoom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.hpp
+Bathroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/InputVal.cpp
+cstdlib
+-
+iostream
+-
+limits
+-
+InputVal.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/InputVal.hpp
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/InputVal.hpp
+cstdlib
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.cpp
+MasterBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+Bathroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+MediaRoom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.hpp
+Office.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.hpp
+GuestBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.cpp
+MediaRoom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+string
+-
+string
+-
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MediaRoom.hpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+Bathroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+GuestBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+MasterBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+string
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.cpp
+Office.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.hpp
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+Bathroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Bathroom.hpp
+Playroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Playroom.hpp
+MasterBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/MasterBedroom.hpp
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.cpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+string
+-
+queue
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Playroom.cpp
+Playroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Playroom.hpp
+iostream
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Playroom.hpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+GuestBedroom.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/GuestBedroom.hpp
+Office.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Office.hpp
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.cpp
+Room.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Room.hpp
+Player.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Player.hpp
+InputVal.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/InputVal.hpp
+string
+-
+
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/main.cpp
+Game.hpp
+/Users/karamansel/Documents/OSU/CS 162/week9/final_proj/Game.hpp
+iostream
+-
+
